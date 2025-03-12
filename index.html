@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextCoin - Premium In-Game Currency Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">NextCoin</div>
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+            <button onclick="showHelp()" class="help-button">Help</button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to NextCoin</h1>
+            <p class="hero-subtitle">Your Premium Platform for In-Game Currencies</p>
+            <button class="cta-button" onclick="showOptions()">GET STARTED</button>
+        </div>
+        <div class="hero-background">
+            <div class="grid-overlay"></div>
+            <div class="glow-effect"></div>
+        </div>
+    </section>
+
+    <div id="options-modal" class="modal">
+        <div class="modal-content">
+            <h2>Choose Your Path</h2>
+            <div class="options-container">
+                <a href="generator.html" class="option-button">Generators</a>
+                <a href="claim.html" class="option-button">Claim</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="help-modal" class="modal">
+        <div class="modal-content">
+            <h2>Help Center</h2>
+            <p>If you got an email saying you need to complete the human verification process, press "Verify" below.</p>
+            <button onclick="showVerification()" class="cta-button verify-button">Verify</button>
+        </div>
+    </div>
+
+    <div id="verification-tasks-modal" class="modal">
+        <div class="modal-content">
+            <h2>Verification Tasks</h2>
+            <p>Please complete 2 of the following tasks to continue:</p>
+            
+            <div class="task-list">
+                <div class="task-item">
+                    <label>
+                        <input type="checkbox" class="task-checkbox" onchange="updateTaskProgress()">
+                        Make 3 songs on BandLab and upload them
+                    </label>
+                </div>
+                <div class="task-item">
+                    <label>
+                        <input type="checkbox" class="task-checkbox" onchange="updateTaskProgress()">
+                        Complete a Scratch project tutorial
+                    </label>
+                </div>
+                <div class="task-item">
+                    <label>
+                        <input type="checkbox" class="task-checkbox" onchange="updateTaskProgress()">
+                        Complete a BandLab song tutorial
+                    </label>
+                </div>
+            </div>
+
+            <p class="task-instructions">Please go to the owner of the site and complete 2 of the 3 tasks.</p>
+            <button onclick="completeVerification()" class="cta-button" id="complete-tasks-button" disabled>
+                Complete Tasks
+            </button>
+        </div>
+    </div>
+
+    <div id="verification-complete-modal" class="modal">
+        <div class="modal-content">
+            <div class="success-message">
+                <h2>Perfect!</h2>
+                <p>You have been verified. Please check your email in 3-5 hours to receive confirmation of your currency.</p>
+                <button onclick="closeAllModals()" class="cta-button">Okay</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 NextCoin. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextCoin - Currency Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">NextCoin</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#" class="active">Generator</a>
+        </div>
+    </nav>
+
+    <div class="hero" style="height: auto; padding-top: 100px;">
+        <div class="hero-content">
+            <h1>Currency Generator</h1>
+            <p>Select your preferred in-game currency below</p>
+        </div>
+    </div>
+
+    <div class="currency-options">
+        <div class="currency-card" onclick="selectCurrency('Vbucks')">
+            <h3>V-Bucks</h3>
+            <p>Fortnite Currency</p>
+            <p class="currency-description">Power up your Fortnite experience with V-Bucks</p>
+            <div class="currency-stats">
+                <span>24/7 Support</span> • <span>Instant Delivery</span>
+            </div>
+        </div>
+        <div class="currency-card" onclick="selectCurrency('Robux')">
+            <h3>Robux</h3>
+            <p>Roblox Currency</p>
+            <p class="currency-description">Enhance your Roblox gameplay with Robux</p>
+            <div class="currency-stats">
+                <span>Secure</span> • <span>Reliable</span>
+            </div>
+        </div>
+        <div class="currency-card" onclick="selectCurrency('Minecoins')">
+            <h3>Minecoins</h3>
+            <p>Minecraft Currency</p>
+            <p class="currency-description">Build your world with Minecoins</p>
+            <div class="currency-stats">
+                <span>Fast</span> • <span>Safe</span>
+            </div>
+        </div>
+        <div class="currency-card" onclick="selectCurrency('RC')">
+            <h3>RC</h3>
+            <p>Premium Currency</p>
+            <p class="currency-description">Premium currency for elite gamers</p>
+            <div class="currency-stats">
+                <span>Premium</span> • <span>Exclusive</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="scanner-modal" class="modal">
+        <div class="modal-content">
+            <h2>Fingerprint Verification</h2>
+            <div class="fingerprint-scanner">
+                <div class="scan-line"></div>
+                <div class="scan-circle"></div>
+            </div>
+            <p>Place your finger on the scanner and hold space</p>
+            <div class="loading-container" style="display: none;">
+                <div class="loading-spinner"></div>
+                <div class="progress-bar">
+                    <div class="progress-bar-fill"></div>
+                </div>
+                <p class="loading-text">Initializing scanner...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="amount-modal" class="modal">
+        <div class="modal-content">
+            <h2>Enter Amount</h2>
+            <p id="user-greeting"></p>
+            <div class="currency-info">
+                <p>Current Exchange Rate: <span id="exchange-rate">1.00</span></p>
+                <p>Server Status: <span class="status-online">Online</span></p>
+            </div>
+            <input type="number" id="currency-amount" class="amount-input" max="100000" placeholder="Enter amount (max 100,000)">
+            <div class="amount-details">
+                <p>Processing Fee: <span>0%</span></p>
+                <p>Delivery Time: <span>3-5 minutes</span></p>
+            </div>
+            <button class="cta-button" onclick="generateCurrency()">Generate</button>
+        </div>
+    </div>
+
+    <div id="processing-modal" class="modal">
+        <div class="modal-content">
+            <h2>Processing Your Request</h2>
+            <div class="loading-container">
+                <div class="loading-spinner"></div>
+                <div class="progress-bar">
+                    <div class="progress-bar-fill"></div>
+                </div>
+                <p class="loading-text" id="processing-status">Initializing generation process...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <div class="success-message">
+                <h2>Thank you!</h2>
+                <p id="success-message"></p>
+                <div class="transaction-details">
+                    <p>Transaction ID: <span id="transaction-id"></span></p>
+                    <p>Estimated Delivery: <span>3-5 minutes</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 NextCoin. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
